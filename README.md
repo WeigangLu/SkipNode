@@ -1,15 +1,28 @@
-# NodeMixup: Tackling Under-reaching for Graph Neural Networks
-
+# SkipNode: On Alleviating Performance Degeneration for Deep Graph Convolutional Networks
 
 ## Installation
 
-```bash
-pip install -r requirements.txt
+```
+pip install -r reqyirements.txt
+```
 
-```Usage```
-python main.py --lr 0.001 --weight_decay 0.0004 --hid_dim 256  --dropout 0.9 --gamma 0.5 --beta_s 0.5 --beta_d 0.5 --temp 0.1 --nlayer 2 --model 'GCN' --mixup_alpha 0.8 --lam_intra 1.0 --lam_inter 2.0  --train_size -1 --dataset 'cora' --device 0 --runs 10 --epochs 500
 
-python main.py --lr 0.01 --weight_decay 0.0005 --hid_dim 64  --dropout 0.5 --gamma 0.5 --beta_s 2.0 --beta_d 1.5 --temp 0.1 --nlayer 2 --model 'GCN' --mixup_alpha 0.4 --lam_intra 1.0 --lam_inter 1.5  --train_size -1 --dataset 'citeseer' --device 0 --runs 10 --epochs 500
 
-python main.py --lr 0.01 --weight_decay 0.0005 --hid_dim 256  --dropout 0.5 --gamma 0.7 --beta_s 1.0 --beta_d 2.0 --temp 0.1 --nlayer 2 --model 'GCN'  --mixup_alpha 0.4 --lam_intra 1.0 --lam_inter 1.5  --train_size -1 --dataset 'pubmed' --device 0 --runs 10 --epochs 500
+## Usage
 
+```
+python main.py --use_param --strategy {SkipNode, DropEdge, ..., None} --skip_node_type {u,b} --model {GCN, GAT, ...} --dataset {cora, citeseer, pubmed} 
+```
+
+
+
+## Citation
+
+> ```
+> @article{lu2021skipnode,
+>   title={SkipNode: On Alleviating Performance Degradation for Deep Graph Convolutional Networks},
+>   author={Lu, Weigang and Zhan, Yibing and Lin, Binbin and Guan, Ziyu and Liu, Liu and Yu, Baosheng and Zhao, Wei and Yang, Yaming and Tao, Dacheng},
+>   journal={arXiv preprint arXiv:2112.11628},
+>   year={2021}
+> }
+> ```
